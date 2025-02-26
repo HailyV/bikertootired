@@ -1,0 +1,87 @@
+body {
+    font: 100%/1.5 system-ui, sans-serif;
+    display: flex;
+    flex-flow: column;
+    max-width: 80em;
+    min-height: 100vh;
+    box-sizing: border-box;
+    margin: auto;
+    padding: 1em;
+  }
+  header {
+    display: flex;
+    gap: 1em;
+    align-items: baseline;
+  }
+  
+  label {
+    margin-left: auto; /* Push filter to the right */
+  }
+  
+  #selected-time, #any-time {
+    display: block;
+  }
+  
+  #any-time {
+    color: gray;
+    font-style: italic;
+  }
+  
+  svg circle {
+    pointer-events: auto;  /* Enable tooltips */
+  }
+  
+  /* 🎨 Shared Color Variables */
+:root {
+  --color-departures: steelblue;
+  --color-arrivals: darkorange;
+}
+
+/* 🎯 Apply Color to Circles & Legend */
+/* 🎨 Shared Color Variables */
+:root {
+  --color-departures: steelblue;
+  --color-arrivals: darkorange;
+}
+
+/* 🎯 Apply Color to Circles & Legend Swatches */
+circle, .swatch {
+  --color: color-mix(
+    in oklch,
+    var(--color-departures) calc(100% * var(--departure-ratio)),
+    var(--color-arrivals)
+  );
+  fill: var(--color);
+  background: var(--color);
+}
+
+/* 📌 Legend Styling */
+.legend {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin-block: 1rem;
+}
+
+/* 🎨 Each Legend Item */
+.legend-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  gap: 8px;
+}
+
+/* 🟧 Color Swatch */
+.swatch {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+h1 {
+  text-align: left !important;
+}
+
+
